@@ -1,0 +1,42 @@
+const creator1 = {
+    name: "Torres Pit",
+    url: 'https://www.youtube.com/@torrespit666', 
+    description: 'Torres Pit is one of my favoritest youtuber. His main theme for his channel is Always Exploring.',
+    imageURL:'https://yt3.googleusercontent.com/tYRKEsJ27gGN8bSQ-mrqSXxHOCoqQxXjyeqa5UZZp2qj_iCDePzLtR1MF69xSRZW_nUDXUyg5EY=s900-c-k-c0x00ffffff-no-rj',
+  }
+
+  const creator2 = {
+    name: "All-In Podcast",
+    url: 'https://www.youtube.com/@allin',
+    description: 'All-In host by  Chamath Palihapitiya, Jason Calacanis, David Sacks & David Friedberg cover all things economic, tech, political, social & poker.',
+    imageURL: 'https://yt3.googleusercontent.com/ytc/AIdro_muNFL-sKuOPm72UvG-ofixqx70KVyRS4365-fTtxH_cg=s900-c-k-c0x00ffffff-no-rj',
+  }
+
+  const creator3 = {
+    name: 'Huberman Lab', 
+    url: 'https://www.youtube.com/@hubermanlab', 
+    description: 'The Huberman Lab podcast is hosted by Dr. Andrew Huberman, a neuroscientist and tenured professor of neurobiology and ophthalmology at Stanford School of Medicine. ',
+    imageURL: "https://yt3.googleusercontent.com/5ONImZvpa9_hYK12Xek2E2JLzRc732DWsZMX2F-AZ1cTutTQLBuAmcEtFwrCgypqJncl5HrV2w=s160-c-k-c0x00ffffff-no-rj"
+  }
+
+  const creator4 = {
+    name: "Mr & Mrs Gao",
+    url: "https://www.youtube.com/@laogao",
+    description: "Lao Gao is a very good story taller. His Channel has a lot of great stories. The stories are amlost myth and Urban legends.", 
+    imageURL: 'https://yt3.googleusercontent.com/U6n1tM-bMbzyjnW3kIrs3Xdhcyxwri__7Ftm_lYuYBvPB1BRU-Z93Zvefc8TPzMUgJly4BKk=s900-c-k-c0x00ffffff-no-rj'
+  }
+
+  const creator5 = {
+    name: 'Lindsay',
+    url: 'https://www.youtube.com/@xiao_lin_shuo',
+    description: "Lindsay is another favorite channel I usally watch. She talks about a lot of economics and finance in a fun way about different country and company. I learned a lot from her channels. ",
+    imageURL: "https://yt3.googleusercontent.com/xnkkc-bF9QVbU-iqkzZpTDYkteKCMWSVoCFXx9CiiRUrwkzNd_1Gk_iPR0YU-Y9HbIChIOOenA=s900-c-k-c0x00ffffff-no-rj",
+  }
+
+
+
+ <li ><Card name={creator1.name} url={creator1.url} description={creator1.description} imageURL={creator1.imageURL}/></li>
+            <li ><Card name={creator2.name} url={creator2.url} description={creator2.description} imageURL={creator2.imageURL}/></li>
+            <li ><Card name={creator3.name} url={creator3.url} description={creator3.description} imageURL={creator3.imageURL}/></li>
+            <li ><Card name={creator4.name} url={creator4.url} description={creator4.description} imageURL={creator4.imageURL}/></li>
+            <li ><Card name={creator5.name} url={creator5.url} description={creator5.description} imageURL={creator5.imageURL}/></li>
