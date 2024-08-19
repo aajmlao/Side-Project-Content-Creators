@@ -1,13 +1,9 @@
 import Card from './components/Card';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import './App.css'
-import { Form, Outlet } from 'react-router-dom';
+import { Form, useLoaderData } from 'react-router-dom';
 import { createCreator, getCreator } from "./dataOp";
-
-export async function action() {
-  const creator = await createCreator();
-  return {creator};
-}
+import AddCreator from './pages/AddCreator';
 
 export async function loader() {
   const creators = await getCreator();
@@ -16,9 +12,16 @@ export async function loader() {
 
 function App() {
   const targetRef = useRef(null)
-  
+  const [showPopup, setShowPopup] = useState(false)
+  const data = useLoaderData();
+  const creators = data['creators']
+
   const viewAllCreaters = () => {
     targetRef.current.scrollIntoView({behavior: 'smooth'});
+  }
+
+  const handleShowPopup = () => {
+    setShowPopup(!showPopup)
   }
 
   return (
@@ -28,25 +31,35 @@ function App() {
           <div className='button d-flex justify-content-around'> 
             <button className="btn btn-primary"  style={{width: '200px'}} onClick={viewAllCreaters} type='button'>Views All Creators</button>
             <Form action='addcreator'>
-              <button className="btn btn-primary" style={{width: '200px'}} type='submit'>Add A Creator</button>
+              <button className="btn btn-primary" style={{width: '200px'}} type='submit' onClick={handleShowPopup}>Add A Creator</button>
             </Form>
         </div>
-        
-        
       </div>
    
-      <div className='creators text-center ' ref={targetRef} >
+      <div className='creators text-center' ref={targetRef} >
         <h1>Content Creators</h1>
         <nav>
-          <ul class="row row-cols-md-3 g-4" style={{listStyle:'none', paddingLeft:'100px', paddingRight:'100px', paddingBottom:'100px', paddingTop:'50px'}}>
-           
-          </ul>
+          {creators.length ? (
+            <ul className="d-flex justify-content-evenly flex-wrap gap-5" style={{listStyle:'none', paddingLeft:'24px', paddingRight:'24px', paddingBottom:'100px', paddingTop:'50px'}}>
+              {creators.map((creator)=>(
+                <li key={`${creator.id}`}>
+                  <Card name={JSON.parse(creator.name).name} 
+                  url={JSON.parse(creator.url).url} 
+                  description={JSON.parse(creator.description).description} 
+                  imageURL={JSON.parse(creator.imageURL).imageURL}/></li>
+              ))}
+            </ul>
+          ):(
+            <p>
+              <i>No contacts</i>
+            </p>
+          )}
         </nav>
       </div>
 
-      <div id="popup" >
-        <Outlet />
-      </div>
+      {showPopup && <div id="popup" >
+        <AddCreator showPopup={handleShowPopup}/>
+      </div>}
     </div>
   )
 }
