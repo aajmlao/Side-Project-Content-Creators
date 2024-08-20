@@ -9,7 +9,7 @@
   width: 100%;
   min-height: 100vh;
   padding: 100px;
-  background-color: gold;
+  /* background-color: gold; */
   & .text-uppercase{
     margin-top: 20vh;
   }
@@ -36,6 +36,19 @@
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+#editPopup{
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center; 
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
 .addCreator > label{
   width: 32rem;
 
@@ -47,4 +60,22 @@
     height: 15vh;
   }
 
+}
+
+.infoLink{
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.text-truncate-3 {
+  -webkit-line-clamp: 3;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+nav > ul > li:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }

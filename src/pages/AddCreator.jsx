@@ -1,5 +1,5 @@
 import { createCreator } from "../dataOp";
-import { Form, redirect, useNavigate} from "react-router-dom";
+import { Form, useNavigate} from "react-router-dom";
 
 export default function AddCreator({showPopup}) {
     const navigate = useNavigate();

@@ -1,0 +1,30 @@
+.body{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#left{
+
+    & img{
+        width: 400px;
+        height: 400px;
+        border: 1px solid gold;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+#right{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 25px;
+}
+
+.btn-danger strong{
+    align-items: center;
+}
+
+span {
+    display: flex;
+    gap: 10%;
+}
