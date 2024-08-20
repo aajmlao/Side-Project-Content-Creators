@@ -33,6 +33,8 @@ export async function updateCreator({name, newUrl, newDescription, newImageURL})
     }
     if (newDescription !== null && newDescription !== '') {
         updates.description = newDescription;
+    } else {
+        updates.description = ''
     }
     if (newImageURL !== null && newImageURL !== '') {
         updates.imageURL = newImageURL;
