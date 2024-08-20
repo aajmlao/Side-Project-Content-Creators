@@ -22,7 +22,7 @@ const ViewAllCreators =()=>{
             </ul>
           ):(
             <p>
-              <i>No contacts</i>
+              <i>No Creator</i>
             </p>
           )}
         </nav>
